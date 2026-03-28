@@ -58,7 +58,7 @@ timeout
 4. Call Stack이 비어 있음
 5. Event Loop가 Task Queue에서 `timeout` 콜백을 가져와 실행
 
-# 매크로 태스크 큐(Macro Task Queue)
+## 매크로 태스크 큐(Macro Task Queue)
 
 매크로 태스크 큐는 **일반적인 비동기 콜백들이 들어가는 큐**이다.
 
@@ -68,7 +68,8 @@ timeout
 - `setInterval`
 - `setImmediate`
 - DOM 이벤트 (`click`, `keydown` 등)
-- `requestAnimationFrame`
+
+`requestAnimationFrame`은 보통 매크로 태스크로 분류하기보다, 브라우저의 다음 렌더링 직전에 실행되는 렌더링 타이밍 콜백으로 본다.
 
 이러한 작업들은 **매크로 태스크 큐에 저장되었다가 Event Loop에 의해 실행된다.**
 
@@ -94,7 +95,7 @@ macro task
 
 `setTimeout`의 콜백은 **매크로 태스크 큐에 들어가기 때문에 현재 실행 중인 코드가 모두 끝난 이후 실행된다.**
 
-# 마이크로 태스크 큐(Micro Task Queue)
+## 마이크로 태스크 큐(Micro Task Queue)
 
 마이크로 태스크 큐는 **매크로 태스크보다 우선적으로 실행되는 큐**이다.
 
@@ -143,7 +144,7 @@ macro task
 6. **마이크로 태스크 큐 먼저 실행**
 7. 이후 **매크로 태스크 큐 실행**
 
-# 실행 순서 정리
+## 실행 순서 정리
 
 이벤트 루프는 다음 순서로 작업을 처리한다.
 
@@ -163,7 +164,7 @@ Micro Task Queue
 Macro Task Queue
 ```
 
-# 정리
+## 정리
 
 - **Event Loop**
   → Call Stack이 비어 있는지 확인하고 Task Queue의 작업을 실행하는 메커니즘
@@ -173,3 +174,7 @@ Macro Task Queue
 
 - **Micro Task Queue**
   → `Promise.then`, `queueMicrotask` 등이 들어가는 큐이며 **Macro Task보다 먼저 실행된다**
+
+## 면접 답변용 한 줄 정리
+
+이벤트 루프는 콜 스택이 비었을 때 마이크로태스크를 먼저 모두 처리한 뒤, 매크로태스크를 하나씩 실행하면서 비동기 작업 순서를 관리한다.

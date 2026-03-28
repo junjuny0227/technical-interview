@@ -32,3 +32,18 @@ function foo() {
 함수 선언문 또한 호이스팅이 발생한다. 이 경우에는 변수와 달리 함수 전체가 함께 호이스팅된다.
 
 즉, 함수 선언이 코드 실행 전에 미리 메모리에 등록되기 때문에, 선언 이전에 호출하더라도 정상적으로 동작하여 `"Hello, World!"`를 출력한다.
+
+## let, const와 TDZ
+
+`let`, `const`도 호이스팅되지만 초기화 전까지는 **TDZ(Temporal Dead Zone)** 에 있어 접근할 수 없다.
+
+```javascript
+console.log(a); // ReferenceError
+let a = 10;
+```
+
+즉, `var`는 선언 시 `undefined`로 초기화되지만, `let`과 `const`는 초기화 전 접근 시 에러가 발생한다.
+
+## 면접 답변용 한 줄 정리
+
+호이스팅은 선언이 스코프 상단으로 끌어올려진 것처럼 동작하는 현상이며, `var`는 `undefined`로 초기화되고 `let`·`const`는 TDZ 때문에 초기화 전 접근 시 에러가 난다.

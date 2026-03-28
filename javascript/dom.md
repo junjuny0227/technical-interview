@@ -19,7 +19,7 @@ DOM은 Document Object Model의 약자로, HTML 문서를 구조화하여 표현
 - `appendChild()` / `removeChild()`
 - `element.textContent`, `element.innerHTML`
 
-# DOM 이벤트와 Event Loop
+## DOM 이벤트와 Event Loop
 
 DOM 이벤트(`click`, `keydown` 등)의 콜백은 태스크 큐를 통해 Event Loop에 의해 실행된다.
 
@@ -30,3 +30,7 @@ DOM 이벤트(`click`, `keydown` 등)의 콜백은 태스크 큐를 통해 Event
 ## 정리
 
 DOM은 브라우저가 HTML을 파싱해 만든 트리 구조의 객체 모델이며, JavaScript가 이를 통해 문서의 구조와 스타일, 내용을 동적으로 조작할 수 있게 해주는 인터페이스다.
+
+## 면접 답변용 한 줄 정리
+
+DOM은 브라우저가 HTML을 객체 트리로 만든 모델이며, JavaScript는 DOM API를 통해 문서 구조와 내용을 동적으로 변경한다.
