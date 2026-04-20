@@ -15,3 +15,4 @@
 - [디바운스(Debounce)와 쓰로틀(Throttle)](javascript/debounce-throttle.md)
 - [CommonJS와 ES Module 차이](javascript/commonjs-esm.md)
 - [고차함수(Higher-Order Function)](javascript/higher-order-function.md)
+- [쿠키, 로컬스토리지, 세션스토리지](javascript/cookie-localstorage-sessionstorage.md)
